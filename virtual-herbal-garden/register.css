@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(217, 234, 254));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-container {
+    display: flex;
+    width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.info-box {
+    background: linear-gradient(to bottom right, rgb(158, 232, 173), rgb(130, 215, 254));
+    color: white;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box h1, .info-box p {
+    animation: textMove 3s ease-in-out infinite alternate;
+}
+
+.info-box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    font-size: 16px;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 12px 40px; /* Adjusted for emoji */
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    background: url('user-icon.png') no-repeat 10px center, white; /* Example for name */
+}
+
+input[type="text"] {
+    background: url('user-icon.png') no-repeat 10px center, white;
+}
+
+input[type="email"] {
+    background: url('email-icon.png') no-repeat 10px center, white;
+}
+
+input[type="password"] {
+    background: url('lock-icon.png') no-repeat 10px center, white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.links {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.links a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+    }
+    
+    .info-box,
+    .form-box {
+        padding: 30px;
+    }
+} 
