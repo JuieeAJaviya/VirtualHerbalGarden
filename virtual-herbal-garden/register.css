@@ -74,24 +74,25 @@ button:hover {
 
 .error-message {
     color: #e74c3c;
-    margin-top: 0.5rem;
     font-size: 0.9rem;
+    margin-top: 0.5rem;
     display: none;
 }
 
 .links {
     margin-top: 1.5rem;
-    color: #7f8c8d;
+    color: #666;
 }
 
 .links a {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .links a:hover {
-    text-decoration: underline;
+    color: #45a049;
 }
 
 @keyframes float {
@@ -103,7 +104,7 @@ button:hover {
     }
 }
 
-/* फॉलिंग लीव्स एनिमेशन */
+/* Falling Leaves Animation */
 .leaf-container {
     position: fixed;
     top: 0;
