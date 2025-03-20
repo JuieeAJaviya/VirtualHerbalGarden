@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script>
+        // पेज लोड होने से पहले लॉगिन चेक
+        if (!localStorage.getItem('currentUser') || !JSON.parse(localStorage.getItem('currentUser')).isLoggedIn) {
+            window.location.replace('login.html');
+        }
+    </script>
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
