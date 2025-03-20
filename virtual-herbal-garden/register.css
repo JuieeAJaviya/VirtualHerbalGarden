@@ -6,125 +6,118 @@
 }
 
 body {
-    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(217, 234, 254));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .register-container {
-    display: flex;
-    width: 800px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.info-box {
-    background: linear-gradient(to bottom right, rgb(158, 232, 173), rgb(130, 215, 254));
-    color: white;
-    padding: 40px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.info-box h1, .info-box p {
-    animation: textMove 3s ease-in-out infinite alternate;
-}
-
-.info-box h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.info-box p {
-    font-size: 16px;
-}
-
-.form-box {
     background: white;
-    padding: 40px;
-    flex: 1;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
 }
 
 input {
-    width: 100%;
-    padding: 12px 40px; /* Adjusted for emoji */
-    margin: 10px 0;
+    padding: 1rem;
     border: 1px solid #ddd;
-    border-radius: 20px;
-    font-size: 14px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
     outline: none;
-    background: url('user-icon.png') no-repeat 10px center, white; /* Example for name */
-}
-
-input[type="text"] {
-    background: url('user-icon.png') no-repeat 10px center, white;
-}
-
-input[type="email"] {
-    background: url('email-icon.png') no-repeat 10px center, white;
-}
-
-input[type="password"] {
-    background: url('lock-icon.png') no-repeat 10px center, white;
+    border-color: #4CAF50;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    margin: 20px 0;
-    background: #4CAF50;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     color: white;
+    padding: 1rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    display: none;
 }
 
 .links {
-    margin-top: 10px;
-    font-size: 12px;
-    text-align: center;
+    margin-top: 1.5rem;
+    color: #7f8c8d;
 }
 
 .links a {
     color: #4CAF50;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .links a:hover {
     text-decoration: underline;
 }
 
-@keyframes textMove {
-    0% {
+@keyframes float {
+    0%, 100% {
         transform: translateY(0);
     }
-    100% {
+    50% {
         transform: translateY(-10px);
     }
 }
 
-@media (max-width: 768px) {
+/* फॉलिंग लीव्स एनिमेशन */
+.leaf-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
     .register-container {
-        flex-direction: column;
-    }
-    
-    .info-box,
-    .form-box {
-        padding: 30px;
+        margin: 1rem;
+        padding: 1.5rem;
     }
 } 
