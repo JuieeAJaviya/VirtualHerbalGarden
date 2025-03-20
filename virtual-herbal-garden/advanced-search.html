@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Search</title>
     <link rel="stylesheet" href="advanced-search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="navbar">
         <div class="logo">AYUSH Virtual Herbal Garden</div>
         <ul class="nav-menu">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="#" class="active">Advanced Search</a></li>
+            <li><a href="#">Bookmarks</a></li>
             <li><a href="#">Story</a></li>
             <li><a href="login.html" id="logoutBtn">Logout</a></li>
         </ul>
@@ -19,10 +21,65 @@
     <div class="dashboard-content">
         <h1>Advanced Search</h1>
         <p>Explore our virtual herbal garden with advanced search options.</p>
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" placeholder="Enter herb name">
-                <button class="discover-btn">Discover <span class="leaf">🌿</span></button>
+        
+        <div class="advanced-search-container">
+            <div class="search-filters">
+                <div class="filter-group">
+                    <h3><i class="fas fa-filter"></i> Filters</h3>
+                    
+                    <div class="filter-section">
+                        <h4>Medicinal System</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="system" value="ayurveda"> Ayurveda</label>
+                            <label><input type="checkbox" name="system" value="yoga"> Yoga & Naturopathy</label>
+                            <label><input type="checkbox" name="system" value="unani"> Unani</label>
+                            <label><input type="checkbox" name="system" value="siddha"> Siddha</label>
+                            <label><input type="checkbox" name="system" value="homeopathy"> Homeopathy</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Health Benefits</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="benefits" value="immunity"> Immunity Booster</label>
+                            <label><input type="checkbox" name="benefits" value="digestive"> Digestive Health</label>
+                            <label><input type="checkbox" name="benefits" value="respiratory"> Respiratory Health</label>
+                            <label><input type="checkbox" name="benefits" value="stress"> Stress Relief</label>
+                            <label><input type="checkbox" name="benefits" value="skin"> Skin Care</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Plant Type</h4>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="type" value="herb"> Herbs</label>
+                            <label><input type="checkbox" name="type" value="shrub"> Shrubs</label>
+                            <label><input type="checkbox" name="type" value="tree"> Trees</label>
+                            <label><input type="checkbox" name="type" value="climber"> Climbers</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-main">
+                <div class="search-box">
+                    <input type="text" placeholder="Search by plant name, benefits, or properties">
+                    <button class="discover-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+
+                <div class="quick-filters">
+                    <span class="filter-tag">Immunity Booster</span>
+                    <span class="filter-tag">Digestive Health</span>
+                    <span class="filter-tag">Stress Relief</span>
+                    <span class="filter-tag">Skin Care</span>
+                    <span class="filter-tag">Respiratory Health</span>
+                </div>
+
+                <div class="search-results">
+                    <!-- Results will be dynamically populated -->
+                </div>
             </div>
         </div>
     </div>
