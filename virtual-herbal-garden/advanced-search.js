@@ -1,22 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Advanced search functionality
-    const advancedSearchBtn = document.querySelector('.advanced-search-btn');
-    
-    advancedSearchBtn.addEventListener('click', () => {
-        // Collect all filter values
-        const filters = {
-            name: document.querySelector('input[name="plant-name"]').value,
-            category: document.querySelector('select[name="category"]').value,
-            properties: document.querySelector('select[name="properties"]').value
-        };
+    const searchBtn = document.querySelector('.discover-btn');
+    const searchInput = document.querySelector('.search-box input');
+    const resultsContainer = document.querySelector('.search-results');
 
-        // Perform advanced search
-        console.log('Advanced search with filters:', filters);
-        // Add your advanced search logic here
-    });
+    searchBtn.addEventListener('click', async () => {
+        const query = searchInput.value.trim();
+        if (!query) return;
 
-    // Logout functionality
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        window.location.href = 'login.html';
+        try {
+            const response = await fetch('/api/search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await response.json();
+            resultsContainer.innerHTML = `<p>${data.result}</p>`;
+        } catch (error) {
+            resultsContainer.innerHTML = `<p style="color:red;">Error fetching results</p>`;
+        }
     });
 });
