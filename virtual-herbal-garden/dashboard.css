@@ -2,17 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('bg.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     min-height: 100vh;
 }
 
 .navbar {
     background: rgba(246, 249, 246, 0.95);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,26 +38,14 @@ body {
     font-weight: 500;
 }
 
-.nav-menu a:hover:not([href="advanced-search.html"]), 
-.nav-menu a.active:not([href="advanced-search.html"]) {
+
+.nav-menu a.active{
     background: #4CAF50;
     color: white;
 }
 
-.nav-menu a[href="advanced-search.html"] {
-    background: linear-gradient(45deg, #4CAF50, #45a049);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 0;
-    font-weight: 600;
-    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
-.nav-menu a[href="advanced-search.html"]:hover {
+.nav-menu a:hover {
     background: white;
     color: #4CAF50;
     border-color: #4CAF50;
