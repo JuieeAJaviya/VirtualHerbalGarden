@@ -1,10 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
+const leafContainer = document.querySelector('.leaf-container');
+const leafEmojis = ["🍃", "🌿", "🍂", "🍁", "☘️"];
+
+function createLeaf() {
+    const leaf = document.createElement('div');
+    leaf.classList.add('leaf');
+    leaf.style.left = Math.random() * 100 + 'vw';
+    leaf.style.animationDuration = Math.random() * 3 + 5 + 's';
+    leaf.style.fontSize = Math.random() * 10 + 20 + 'px';
+    leaf.textContent = leafEmojis[Math.floor(Math.random() * leafEmojis.length)];
+    leafContainer.appendChild(leaf);
+
+    setTimeout(() => {
+        leaf.remove();
+    }, 8000);
+}
+
+setInterval(createLeaf, 300);   
+    
+    document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const registerError = document.getElementById('registerError');
     
-    // फॉलिंग लीव्स एनिमेशन
-    const leafContainer = document.querySelector('.leaf-container');
-    createFallingLeaves();
 
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -89,37 +105,4 @@ document.addEventListener('DOMContentLoaded', () => {
         return emailRegex.test(email);
     }
 
-    // फॉलिंग लीव्स एनिमेशन फंक्शन
-    function createFallingLeaves() {
-        const colors = ['#4CAF50', '#45a049', '#2c3e50'];
-        
-        function createLeaf() {
-            const leaf = document.createElement('div');
-            leaf.className = 'leaf';
-            
-            const size = Math.random() * 20 + 10;
-            const startPosition = Math.random() * window.innerWidth;
-            const delay = Math.random() * 5;
-            const rotation = Math.random() * 360;
-            
-            leaf.style.cssText = `
-                width: ${size}px;
-                height: ${size}px;
-                background-color: ${colors[Math.floor(Math.random() * colors.length)]};
-                left: ${startPosition}px;
-                animation: fall ${Math.random() * 10 + 5}s linear ${delay}s infinite;
-                transform: rotate(${rotation}deg);
-            `;
-            
-            leafContainer.appendChild(leaf);
-            
-            // 20 सेकंड बाद लीफ को हटा दें
-            setTimeout(() => {
-                leaf.remove();
-            }, 20000);
-        }
-
-        // हर 300ms में एक नया लीफ बनाएं
-        setInterval(createLeaf, 300);
-    }
 });
