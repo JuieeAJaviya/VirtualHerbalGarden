@@ -3,12 +3,13 @@ async function searchHerbs() {
     const part = document.getElementById('part').value;
     const country = document.getElementById('country').value;
     const purpose = document.getElementById('purpose').value;
+    const sunExposure = document.getElementById('sunExposure').value;
     const errorMessage = document.getElementById('errorMessage');
     const loading = document.getElementById('loading');
     const generateAgainBtn = document.getElementById('generateAgainBtn');
 
     // Validate all fields are filled
-    if (!category || !part || !country || !purpose) {
+    if (!category || !part || !country || !purpose || !sunExposure) {
         errorMessage.style.display = 'block';
         return;
     }
@@ -21,10 +22,11 @@ async function searchHerbs() {
         const response = await fetch("http://localhost:5000/api/search", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ category, part, country, purpose })
+            body: JSON.stringify({ category, part, country, purpose, sunExposure })
         });
 
         const data = await response.json();
+        console.log(data);
 
         if (data.success) {
             document.getElementById('outputBox').innerHTML = formatHerbs(data.data);
