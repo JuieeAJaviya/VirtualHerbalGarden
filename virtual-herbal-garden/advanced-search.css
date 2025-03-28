@@ -1,108 +1,133 @@
-
 @import url('dashboard.css');
-
 
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
 }
 
 .search-container {
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto; /* Centers horizontally */
+    margin: 120px auto 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centers horizontally */
-    background: rgb(246, 255, 246);
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0.2, 0.2, 0.2, 0.2);
-    max-width: 1200px;
+    justify-content: center;
+    background: rgba(28, 43, 34, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
-.navbar {
-    background: rgba(246, 249, 246, 0.95);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 h2 {
-    color: #4CAF50;
-    margin-right: 10px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    font-size: 28px;
+    color: #2e7d32;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #4CAF50, transparent);
 }
 
 .search-controls {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 15px;
+    margin: 25px 0;
+    width: 100%;
+    padding: 0 20px;
 }
 
 select {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border: 2px solid rgba(76, 175, 80, 0.3);
+    border-radius: 10px;
     color: #333;
-    font-size: 14px;
+    font-size: 15px;
     outline: none;
-    background-color: white;
-    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+select:hover, select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
 }
 
 .search-btn {
     flex: 1;
-    padding: 12px;
-    background: #4CAF50;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    height: 40px;
+    height: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .search-btn:hover {
-    background: #45a049;
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
 .output-container {
     width: 100%;
-    max-width: 1245px; /* Ensures it matches .search-container */
-    min-height: 30px; /* Starts at 1 line height */
-    max-height: 300px; /* Expands but stops at 300px */
-    overflow-y: auto; /* Enables vertical scrolling only if needed */
-    overflow-x: hidden; /* Completely disables horizontal scrolling */
-    margin: 20px auto; /* Centers the container horizontally */
-    padding: 10px;
-    background: rgb(211, 230, 211); /* Matches .search-container background */
-    border-radius: 15px; /* Matches .search-container's rounded corners */
-    box-shadow: 0 4px 12px rgba(0.3, 0.3, 0.3, 0.3); /* Matches .search-container shadow */
-    white-space: pre-wrap; /* Ensures text wraps properly */
-    word-wrap: break-word; /* Prevents horizontal scroll */
+    max-width: 1200px;
+    min-height: 30px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: pre-wrap;
+    word-wrap: break-word;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center; /* Ensures content stays centered */
+    align-items: center;
 }
 
 .herb-info {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 15px;
-    margin-bottom: 10px; /* Space between herb info blocks */
+    margin-bottom: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -122,4 +147,3 @@ select {
     margin: 10px 0;
     display: none;
 }
-
