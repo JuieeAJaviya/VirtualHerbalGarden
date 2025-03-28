@@ -3,98 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brahmi - AYUSH Virtual Herbal Garden</title>
+    <title>Brahmi Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
         }
-        .plant-image {
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section h2 {
-            color: #27ae60;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 5px;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            background-color: #219a52;
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Brahmi</h1>
-        <img src="brahmi.jpeg" alt="Brahmi Plant" class="plant-image">
-        
-        <div class="section">
-            <h2>Scientific Information</h2>
-            <p><strong>Scientific Name:</strong> Bacopa monnieri</p>
-            <p><strong>Common Names:</strong> Brahmi, Water Hyssop, Thyme-leaved Gratiola</p>
-            <p><strong>Family:</strong> Plantaginaceae</p>
-            <p><strong>Origin:</strong> Native to India, found in wetlands and marshy areas throughout the Indian subcontinent.</p>
-        </div>
-
-        <div class="section">
-            <h2>Traditional Significance</h2>
-            <p>Brahmi is one of the most revered herbs in Ayurvedic medicine, known for its powerful effects on brain function and cognitive abilities. It's named after Brahma, the creator in Hindu mythology.</p>
-        </div>
-
-        <div class="section">
-            <h2>Medicinal Properties</h2>
-            <ul>
-                <li>Memory enhancement</li>
-                <li>Brain function improvement</li>
-                <li>Anti-anxiety effects</li>
-                <li>Antioxidant properties</li>
-                <li>Neuroprotective effects</li>
-                <li>Stress reduction</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Common Uses</h2>
-            <ul>
-                <li>Memory and learning enhancement</li>
-                <li>Stress and anxiety management</li>
-                <li>Traditional brain tonic</li>
-                <li>Mental clarity improvement</li>
-                <li>Ayurvedic medicine for cognitive health</li>
-            </ul>
-        </div>
-
-        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
     </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Brahmi (Bacopa monnieri)</h1>
+            <p>A sacred cognitive enhancer known as the "Herb of Grace" renowned for its memory-boosting and mental clarity properties.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="brahmi.jpeg" alt="Brahmi" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Plantaginaceae</p>
+                <p><strong>Native Region:</strong> Indian Subcontinent</p>
+                <p><strong>Plant Type:</strong> Perennial creeper</p>
+                <p><strong>Height:</strong> 10-30 cm</p>
+                <p><strong>Flowering Season:</strong> Year-round</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Brahmi holds special importance in Ayurveda:</p>
+                <ul>
+                    <li>Named after Lord Brahma</li>
+                    <li>Sacred herb in Ayurveda</li>
+                    <li>Used in ancient texts</li>
+                    <li>Memory enhancement herb</li>
+                    <li>Symbol of knowledge</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Cognitive enhancement</li>
+                    <li>Memory improvement</li>
+                    <li>Anti-anxiety effects</li>
+                    <li>Neuroprotective properties</li>
+                    <li>Antioxidant action</li>
+                    <li>Mental clarity support</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Memory enhancement</li>
+                    <li>Mental focus</li>
+                    <li>Stress reduction</li>
+                    <li>Brain tonic</li>
+                    <li>Hair and skin care</li>
+                    <li>Anxiety management</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Moist, well-draining soil</li>
+                    <li>Partial to full sun</li>
+                    <li>Regular watering</li>
+                    <li>Space plants 20-30 cm apart</li>
+                    <li>Warm climate preferred</li>
+                    <li>Can grow in water</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>Start with small doses</li>
+                    <li>May cause digestive issues</li>
+                    <li>Avoid during pregnancy</li>
+                    <li>Can interact with medications</li>
+                    <li>Monitor blood pressure</li>
+                    <li>Consult healthcare provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html> 
