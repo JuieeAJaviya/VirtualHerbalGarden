@@ -32,22 +32,22 @@ setInterval(createLeaf, 300);
 
         // वैलिडेशन
         if (!fullName || !email || !password || !confirmPassword) {
-            showError('कृपया सभी फील्ड भरें');
+            showError('Please fill all the fields');
             return;
         }
 
         if (!isValidEmail(email)) {
-            showError('कृपया वैध ईमेल एड्रेस डालें');
+            showError('Please enter a valid email address');
             return;
         }
 
         if (password.length < 6) {
-            showError('पासवर्ड कम से कम 6 अक्षर का होना चाहिए');
+            showError('Password must be at least 6 characters long');
             return;
         }
 
         if (password !== confirmPassword) {
-            showError('पासवर्ड मैच नहीं कर रहे हैं');
+            showError('Passwords do not match');
             return;
         }
 
@@ -57,7 +57,7 @@ setInterval(createLeaf, 300);
             
             // चेक करें कि ईमेल पहले से रजिस्टर्ड तो नहीं है
             if (users.some(user => user.email === email)) {
-                showError('यह ईमेल पहले से रजिस्टर्ड है');
+                showError('This email is already registered');
                 return;
             }
 
@@ -78,13 +78,13 @@ setInterval(createLeaf, 300);
             
             // सक्सेस मैसेज दिखाएं और लॉगिन पेज पर रीडायरेक्ट करें
             setTimeout(() => {
-                alert('रजिस्ट्रेशन सफल! कृपया लॉगिन करें।');
+                alert('Registration successful! Please login.');
                 window.location.replace('login.html');
             }, 500);
 
         } catch (error) {
             console.error('Error during registration:', error);
-            showError('रजिस्ट्रेशन में त्रुटि हुई। कृपया पुनः प्रयास करें।');
+            showError('Registration error. Please try again.');
         }
     });
 
