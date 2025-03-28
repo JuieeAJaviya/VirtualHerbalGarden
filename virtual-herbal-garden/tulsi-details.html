@@ -3,85 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulsi (Holy Basil) - AYUSH Virtual Herbal Garden</title>
+    <title>Tulsi Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
         }
-        .plant-image {
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section h2 {
-            color: #27ae60;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 5px;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            background-color: #219a52;
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Tulsi (Holy Basil)</h1>
-        <img src="tulsi.jpg" alt="Tulsi Plant" class="plant-image">
-        
-        <div class="section">
-            <h2>Scientific Information</h2>
-            <p><strong>Scientific Name:</strong> Ocimum tenuiflorum</p>
-            <p><strong>Common Names:</strong> Holy Basil, Tulsi, Tulasī</p>
-            <p><strong>Family:</strong> Lamiaceae (mint family)</p>
-            <p><strong>Origin:</strong> Native to the Indian subcontinent, now cultivated widely in Southeast Asia and other tropical regions.</p>
-        </div>
-
-        <div class="section">
-            <h2>Religious Significance</h2>
-            <p>Tulsi is revered in Hinduism as a manifestation of the goddess Tulsi (also known as Vrinda), the consort of Vishnu.</p>
-        </div>
-
-        <div class="section">
-            <h2>Hindu Practices</h2>
-            <p>Tulsi plants are often planted in Hindu homes, especially in the courtyard, and its leaves are used in rituals and offerings to deities.</p>
-        </div>
-
-        <div class="section">
-            <h2>Medicinal Properties</h2>
-            <p>Known for its anti-inflammatory and antioxidant properties, Tulsi is considered one of the most sacred and beneficial plants in Ayurvedic medicine.</p>
-        </div>
-
-        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
     </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Tulsi (Ocimum sanctum)</h1>
+            <p>A sacred herb in Indian tradition known as "The Queen of Herbs" with powerful healing and spiritual properties.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="tulsi.jpg" alt="Tulsi" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Lamiaceae</p>
+                <p><strong>Native Region:</strong> Indian Subcontinent</p>
+                <p><strong>Plant Type:</strong> Perennial herb</p>
+                <p><strong>Height:</strong> 30-60 cm</p>
+                <p><strong>Flowering Season:</strong> Late summer to early winter</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Tulsi holds immense spiritual and cultural importance:</p>
+                <ul>
+                    <li>Considered sacred in Hinduism</li>
+                    <li>Known as "Vishnu Priya" (beloved of Vishnu)</li>
+                    <li>Grown in temples and households</li>
+                    <li>Used in daily worship rituals</li>
+                    <li>Symbol of purity and protection</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Powerful adaptogenic herb</li>
+                    <li>Natural immunomodulator</li>
+                    <li>Anti-inflammatory effects</li>
+                    <li>Antioxidant properties</li>
+                    <li>Respiratory system support</li>
+                    <li>Stress-reducing qualities</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Herbal tea preparation</li>
+                    <li>Treatment of cough and cold</li>
+                    <li>Stress management</li>
+                    <li>Respiratory health</li>
+                    <li>Digestive aid</li>
+                    <li>Immunity boosting</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Needs well-draining soil</li>
+                    <li>Prefers full sunlight</li>
+                    <li>Regular watering required</li>
+                    <li>Space plants 30-45 cm apart</li>
+                    <li>Pinch off flower buds</li>
+                    <li>Protect from frost</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>May interact with medications</li>
+                    <li>Consult before surgery</li>
+                    <li>Moderate use during pregnancy</li>
+                    <li>May affect blood sugar</li>
+                    <li>Start with small doses</li>
+                    <li>Consult healthcare provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html> 
