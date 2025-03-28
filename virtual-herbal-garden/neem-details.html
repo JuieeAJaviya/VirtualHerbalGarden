@@ -3,98 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neem - AYUSH Virtual Herbal Garden</title>
+    <title>Neem Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
         }
-        .plant-image {
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section h2 {
-            color: #27ae60;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 5px;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            background-color: #219a52;
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Neem</h1>
-        <img src="neem.jpg" alt="Neem Plant" class="plant-image">
-        
-        <div class="section">
-            <h2>Scientific Information</h2>
-            <p><strong>Scientific Name:</strong> Azadirachta indica</p>
-            <p><strong>Common Names:</strong> Neem, Indian Lilac, Margosa</p>
-            <p><strong>Family:</strong> Meliaceae</p>
-            <p><strong>Origin:</strong> Native to the Indian subcontinent, now cultivated in tropical and semi-tropical regions worldwide.</p>
-        </div>
-
-        <div class="section">
-            <h2>Traditional Significance</h2>
-            <p>Neem is considered a sacred tree in Indian culture and has been used in traditional medicine for thousands of years. It's often called the "village pharmacy" due to its wide range of medicinal uses.</p>
-        </div>
-
-        <div class="section">
-            <h2>Medicinal Properties</h2>
-            <ul>
-                <li>Antibacterial and antifungal properties</li>
-                <li>Anti-inflammatory effects</li>
-                <li>Blood purifying properties</li>
-                <li>Immune system enhancement</li>
-                <li>Skin health benefits</li>
-                <li>Dental health support</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Common Uses</h2>
-            <ul>
-                <li>Skin care and treatment of skin conditions</li>
-                <li>Dental hygiene (neem twigs for brushing)</li>
-                <li>Natural pesticide and insect repellent</li>
-                <li>Traditional medicine for various ailments</li>
-                <li>Environmental purification</li>
-            </ul>
-        </div>
-
-        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
     </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Neem (Azadirachta indica)</h1>
+            <p>A versatile medicinal tree known as "Nature's Drugstore" with powerful antibacterial and healing properties.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="neem.jpg" alt="Neem" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Meliaceae</p>
+                <p><strong>Native Region:</strong> Indian Subcontinent</p>
+                <p><strong>Plant Type:</strong> Evergreen tree</p>
+                <p><strong>Height:</strong> 15-20 meters</p>
+                <p><strong>Flowering Season:</strong> March to May</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Neem has been revered in Indian tradition for centuries:</p>
+                <ul>
+                    <li>Known as "Sarva Roga Nivarini" (curer of all ailments)</li>
+                    <li>Used in traditional ceremonies and rituals</li>
+                    <li>Mentioned in ancient Ayurvedic texts</li>
+                    <li>Symbol of good health and protection</li>
+                    <li>Used in traditional farming practices</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Strong antibacterial properties</li>
+                    <li>Natural antifungal agent</li>
+                    <li>Anti-inflammatory effects</li>
+                    <li>Blood purifying properties</li>
+                    <li>Immune system booster</li>
+                    <li>Natural pesticide</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Skin care and treatment</li>
+                    <li>Dental hygiene maintenance</li>
+                    <li>Hair care and growth</li>
+                    <li>Natural pest control</li>
+                    <li>Blood sugar management</li>
+                    <li>Wound healing</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Prefers well-draining soil</li>
+                    <li>Needs full sunlight</li>
+                    <li>Drought tolerant once established</li>
+                    <li>Space trees 8-10 meters apart</li>
+                    <li>Regular pruning recommended</li>
+                    <li>Can grow in various soil types</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>Avoid during pregnancy</li>
+                    <li>May affect fertility</li>
+                    <li>Can interact with medications</li>
+                    <li>Not recommended for infants</li>
+                    <li>Start with small doses</li>
+                    <li>Consult healthcare provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html> 
