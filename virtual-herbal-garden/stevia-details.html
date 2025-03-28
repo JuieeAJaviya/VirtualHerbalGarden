@@ -3,121 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stevia - AYUSH Virtual Herbal Garden</title>
+    <title>Stevia Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
         }
-        .plant-image {
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section h2 {
-            color: #27ae60;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 5px;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            background-color: #219a52;
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Stevia</h1>
-        <img src="stevia.jpeg" alt="Stevia Plant" class="plant-image">
-        
-        <div class="section">
-            <h2>Scientific Information</h2>
-            <p><strong>Scientific Name:</strong> Stevia rebaudiana</p>
-            <p><strong>Common Names:</strong> Stevia, Sweet Leaf, Sugar Leaf</p>
-            <p><strong>Family:</strong> Asteraceae</p>
-            <p><strong>Origin:</strong> Native to Paraguay and Brazil, now cultivated worldwide</p>
-        </div>
-
-        <div class="section">
-            <h2>Traditional Significance</h2>
-            <p>Stevia has been used for centuries by the Guarani people of South America as a natural sweetener and medicinal herb. They called it "ka'a he'ê" which means "sweet herb". It has gained global popularity as a natural alternative to artificial sweeteners.</p>
-        </div>
-
-        <div class="section">
-            <h2>Medicinal Properties</h2>
-            <ul>
-                <li>Natural sweetening properties (200-350 times sweeter than sugar)</li>
-                <li>Zero-calorie natural sweetener</li>
-                <li>Anti-diabetic properties</li>
-                <li>Blood pressure regulation</li>
-                <li>Anti-inflammatory effects</li>
-                <li>Antioxidant properties</li>
-                <li>Dental health benefits</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Common Uses</h2>
-            <ul>
-                <li>Natural sugar substitute for diabetics</li>
-                <li>Weight management</li>
-                <li>Blood sugar control</li>
-                <li>Dental cavity prevention</li>
-                <li>Food and beverage sweetening</li>
-                <li>Traditional medicine</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Growing and Cultivation</h2>
-            <ul>
-                <li>Grows best in warm, humid climates</li>
-                <li>Requires well-draining soil</li>
-                <li>Prefers full sun to partial shade</li>
-                <li>Can be grown in containers</li>
-                <li>Harvest leaves before flowering for best sweetness</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Safety and Precautions</h2>
-            <ul>
-                <li>Generally recognized as safe (GRAS) by FDA</li>
-                <li>May interact with certain medications</li>
-                <li>Consult healthcare provider if pregnant or nursing</li>
-                <li>Start with small amounts to test tolerance</li>
-            </ul>
-        </div>
-
-        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
     </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Stevia (Stevia rebaudiana)</h1>
+            <p>A natural sweetener known for its zero-calorie sweetness and medicinal properties.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="stevia.jpeg" alt="Stevia" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Asteraceae</p>
+                <p><strong>Native Region:</strong> South America</p>
+                <p><strong>Plant Type:</strong> Perennial herb</p>
+                <p><strong>Height:</strong> 30-100 cm</p>
+                <p><strong>Flowering Season:</strong> Late summer</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Stevia has been valued across cultures:</p>
+                <ul>
+                    <li>Traditional sweetener</li>
+                    <li>Medicinal herb</li>
+                    <li>Natural sugar alternative</li>
+                    <li>Cultural significance</li>
+                    <li>Traditional medicine</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Blood sugar regulation</li>
+                    <li>Zero calories</li>
+                    <li>Antioxidant benefits</li>
+                    <li>Anti-inflammatory action</li>
+                    <li>Blood pressure support</li>
+                    <li>Dental health</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Natural sweetener</li>
+                    <li>Herbal tea</li>
+                    <li>Food additive</li>
+                    <li>Beverage sweetening</li>
+                    <li>Traditional medicine</li>
+                    <li>Dietary supplement</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Well-draining soil</li>
+                    <li>Full to partial sun</li>
+                    <li>Regular watering</li>
+                    <li>Protect from frost</li>
+                    <li>Container suitable</li>
+                    <li>Regular pruning</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>Use in moderation</li>
+                    <li>Monitor blood sugar</li>
+                    <li>Watch for interactions</li>
+                    <li>Consult healthcare provider</li>
+                    <li>Use pure extracts</li>
+                    <li>Store properly</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html> 
