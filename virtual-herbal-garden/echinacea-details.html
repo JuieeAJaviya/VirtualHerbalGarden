@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echinacea Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Echinacea (Echinacea purpurea)</h1>
+            <p>A powerful immune-boosting herb known as "Purple Coneflower" with remarkable healing properties for cold and flu.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="echinacea.jpeg" alt="Echinacea" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Asteraceae</p>
+                <p><strong>Native Region:</strong> North America</p>
+                <p><strong>Plant Type:</strong> Perennial herb</p>
+                <p><strong>Height:</strong> 60-120 cm</p>
+                <p><strong>Flowering Season:</strong> Mid-summer to fall</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Echinacea has deep roots in traditional medicine:</p>
+                <ul>
+                    <li>Used by Native American tribes</li>
+                    <li>Traditional remedy for infections</li>
+                    <li>Known as "Snake Root"</li>
+                    <li>Historical use in wound healing</li>
+                    <li>Symbol of strength and resilience</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Immune system stimulator</li>
+                    <li>Natural antibiotic properties</li>
+                    <li>Anti-inflammatory effects</li>
+                    <li>Antiviral capabilities</li>
+                    <li>Wound healing support</li>
+                    <li>Blood purifying qualities</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Cold and flu prevention</li>
+                    <li>Immune system support</li>
+                    <li>Wound healing</li>
+                    <li>Respiratory infections</li>
+                    <li>Skin conditions</li>
+                    <li>Herbal supplements</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Needs well-draining soil</li>
+                    <li>Prefers full sun</li>
+                    <li>Drought tolerant</li>
+                    <li>Space plants 45-60 cm apart</li>
+                    <li>Divide every 3-4 years</li>
+                    <li>Winter hardy</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>May trigger allergies</li>
+                    <li>Avoid with autoimmune conditions</li>
+                    <li>Not for long-term use</li>
+                    <li>Can interact with medications</li>
+                    <li>Use caution during pregnancy</li>
+                    <li>Consult healthcare provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html> 
