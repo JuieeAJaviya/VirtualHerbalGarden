@@ -3,99 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemongrass - AYUSH Virtual Herbal Garden</title>
+    <title>Lemongrass Details - AYUSH Virtual Herbal Garden</title>
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .herb-details {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 90px auto 20px;
+        }
+
+        .herb-header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-header h1 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-shadow: none;
+        }
+
+        .herb-header p {
+            color: #444;
+            font-size: 1.2rem;
+            text-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .herb-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .herb-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .herb-section h2 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .herb-section p, .herb-section li {
+            color: #444;
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+        .herb-section ul {
+            list-style-position: inside;
+            padding-left: 1rem;
         }
-        .plant-image {
+
+        .herb-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-image {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section h2 {
-            color: #27ae60;
-            border-bottom: 2px solid #27ae60;
-            padding-bottom: 5px;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #27ae60;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .back-button:hover {
-            background-color: #219a52;
+
+        @media (max-width: 768px) {
+            .herb-details {
+                padding: 1rem;
+                margin-top: 80px;
+            }
+
+            .herb-header {
+                padding: 1.5rem;
+            }
+
+            .herb-header h1 {
+                font-size: 2rem;
+            }
+
+            .herb-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Lemongrass</h1>
-        <img src="lemongrass.jpeg" alt="Lemongrass Plant" class="plant-image">
-        
-        <div class="section">
-            <h2>Scientific Information</h2>
-            <p><strong>Scientific Name:</strong> Cymbopogon citratus</p>
-            <p><strong>Common Names:</strong> Lemongrass, Citronella Grass, Fever Grass</p>
-            <p><strong>Family:</strong> Poaceae</p>
-            <p><strong>Origin:</strong> Native to tropical regions of Asia, particularly India and Sri Lanka.</p>
-        </div>
-
-        <div class="section">
-            <h2>Traditional Significance</h2>
-            <p>Lemongrass has been used in traditional medicine across Asia for centuries, particularly in Ayurveda and traditional Chinese medicine.</p>
-        </div>
-
-        <div class="section">
-            <h2>Medicinal Properties</h2>
-            <ul>
-                <li>Digestive health support</li>
-                <li>Anti-anxiety effects</li>
-                <li>Antimicrobial properties</li>
-                <li>Anti-inflammatory effects</li>
-                <li>Fever reduction</li>
-                <li>Pain relief</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Common Uses</h2>
-            <ul>
-                <li>Digestive issues treatment</li>
-                <li>Stress and anxiety management</li>
-                <li>Fever reduction</li>
-                <li>Natural insect repellent</li>
-                <li>Culinary uses</li>
-                <li>Aromatherapy</li>
-            </ul>
-        </div>
-
-        <a href="dashboard.html" class="back-button">Back to Dashboard</a>
+    <div class="navbar">
+        <div class="logo">AYUSH Virtual Herbal Garden</div>
+        <ul class="nav-menu">
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="advanced-search.html">Advanced Search</a></li>
+            <li><a href="herbs.html">Story</a></li>
+            <li><a href="#" onclick="logout(); return false;">Logout</a></li>
+        </ul>
     </div>
+
+    <div class="herb-details">
+        <div class="herb-header">
+            <h1>Lemongrass (Cymbopogon citratus)</h1>
+            <p>A fragrant medicinal grass known for its citrusy aroma and powerful therapeutic properties in traditional medicine.</p>
+        </div>
+
+        <div class="herb-content">
+            <div class="herb-section">
+                <img src="lemongrass.jpeg" alt="Lemongrass" class="herb-image">
+                <h2>Scientific Information</h2>
+                <p><strong>Family:</strong> Poaceae</p>
+                <p><strong>Native Region:</strong> South Asia</p>
+                <p><strong>Plant Type:</strong> Perennial grass</p>
+                <p><strong>Height:</strong> 90-180 cm</p>
+                <p><strong>Flowering Season:</strong> Rarely flowers</p>
+            </div>
+
+            <div class="herb-section">
+                <h2>Traditional Significance</h2>
+                <p>Lemongrass has been valued across cultures:</p>
+                <ul>
+                    <li>Used in Asian medicine</li>
+                    <li>Traditional fever remedy</li>
+                    <li>Ancient digestive aid</li>
+                    <li>Culinary importance</li>
+                    <li>Aromatherapy essential</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Medicinal Properties</h2>
+                <ul>
+                    <li>Anti-inflammatory action</li>
+                    <li>Antimicrobial effects</li>
+                    <li>Digestive support</li>
+                    <li>Anxiety reduction</li>
+                    <li>Pain relief properties</li>
+                    <li>Antioxidant benefits</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Common Uses</h2>
+                <ul>
+                    <li>Herbal tea preparation</li>
+                    <li>Essential oil production</li>
+                    <li>Culinary seasoning</li>
+                    <li>Natural insect repellent</li>
+                    <li>Aromatherapy</li>
+                    <li>Digestive aid</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Cultivation Tips</h2>
+                <ul>
+                    <li>Well-draining soil</li>
+                    <li>Full sunlight needed</li>
+                    <li>Regular watering</li>
+                    <li>Space plants 60 cm apart</li>
+                    <li>Divide clumps annually</li>
+                    <li>Protect from frost</li>
+                </ul>
+            </div>
+
+            <div class="herb-section">
+                <h2>Safety Precautions</h2>
+                <ul>
+                    <li>May lower blood sugar</li>
+                    <li>Use moderately</li>
+                    <li>Avoid during pregnancy</li>
+                    <li>Can cause skin sensitivity</li>
+                    <li>Monitor blood pressure</li>
+                    <li>Consult healthcare provider</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html> 
