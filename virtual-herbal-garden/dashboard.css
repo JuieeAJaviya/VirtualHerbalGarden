@@ -1,297 +1,118 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-}
-
-.navbar {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 0.5rem 4rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    height: 70px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    white-space: nowrap;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-.nav-menu li {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    height: 30px;
-    letter-spacing: 0.5px;
-}
-
-.nav-menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.nav-menu a.active {
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.user-profile {
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.user-profile img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.dashboard-content {
-    padding-top: 100px;
-    position: relative;
-    z-index: 1;
-}
-
-.dashboard-content h1, .dashboard-content p {
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.dashboard-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.dashboard-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-.search-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.search-box {
-    display: flex;
-    width: 100%;
-    max-width: 1000px;
-    border-radius: 50px;
-    overflow: hidden;
-    background: white;
-}
-
-.search-box input {
-    flex: 1;
-    padding: 15px 25px;
-    border: none;
-    font-size: 1.1rem;
-    outline: none;
-}
-
-.discover-btn {
-    padding: 15px 30px;
-    background: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.discover-btn:hover {
-    background: #45a049;
-}
-
-.medicinal-plants-section {
-    padding: 2rem;
-}
-
-.medicinal-plants-section h2 {
-    color: white;
-    text-align: center;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.plants-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 3rem;
-    padding: 2rem;
-    max-width: 1800px;
-    margin: 0 auto;
-}
-
-.plant-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    animation: fadeInUp 0.6s ease-out;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.plant-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.plant-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-.plant-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
-
-.plant-card h3 {
-    padding: 1.5rem 1.5rem 0.5rem;
-    margin: 0;
-    color: #2c3e50;
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-.plant-card p {
-    padding: 0 1.5rem 1.5rem;
-    margin: 0;
-    color: #666;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.plant-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+// लॉगिन स्टेटस चेक करने का फंक्शन
+function checkLoginStatus() {
+    try {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!currentUser || !currentUser.isLoggedIn) {
+            window.location.replace('login.html');
+            return false;
+        }
+        return true;
+    } catch (error) {
+        console.error('Error checking login status:', error);
+        window.location.replace('login.html');
+        return false;
     }
 }
 
-/* Add scroll animation */
-.scroll-animation {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+// पेज लोड होने से पहले लॉगिन चेक
+if (!checkLoginStatus()) {
+    throw new Error('Not logged in');
 }
 
-.scroll-animation.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // दोबारा लॉगिन चेक
+    if (!checkLoginStatus()) return;
 
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-    .navbar {
-        padding: 0.5rem 2rem;
-        height: 65px;
+    // लॉगआउट बटन का इवेंट हैंडलर
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            try {
+                // लोकल स्टोरेज से यूजर डेटा हटाएं
+                localStorage.removeItem('currentUser');
+                
+                // एनिमेटेड ट्रांजिशन के साथ लॉगिन पेज पर रीडायरेक्ट
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.replace('login.html');
+                }, 500);
+            } catch (error) {
+                console.error('Error during logout:', error);
+                window.location.replace('login.html');
+            }
+        });
     }
 
-    .logo {
-        font-size: 1.6rem;
+    // सर्च फंक्शनैलिटी
+    const searchInput = document.querySelector('.search-box input');
+    const discoverBtn = document.querySelector('.discover-btn');
+
+    if (searchInput && discoverBtn) {
+        discoverBtn.addEventListener('click', () => {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                // यहाँ सर्च लॉजिक जोड़ें
+                console.log('Searching for:', searchTerm);
+            }
+        });
+
+        // एंटर की प्रेस करने पर भी सर्च करें
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                discoverBtn.click();
+            }
+        });
     }
 
-    .nav-menu {
-        gap: 1rem;
+    try {
+        // यूजर का स्वागत मैसेज दिखाएं
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.email) {
+            const welcomeMessage = document.createElement('div');
+            welcomeMessage.classList.add('welcome-message');
+            welcomeMessage.textContent = `स्वागत है, ${currentUser.email}`;
+            const dashboardContent = document.querySelector('.dashboard-content');
+            const searchContainer = document.querySelector('.search-container');
+            if (dashboardContent && searchContainer) {
+                dashboardContent.insertBefore(welcomeMessage, searchContainer);
+            }
+        }
+    } catch (error) {
+        console.error('Error displaying welcome message:', error);
     }
 
-    .nav-menu a {
-        padding: 0.4rem 1.2rem;
-        font-size: 0.95rem;
-        height: 35px;
-    }
-}
+    // Add scroll animation class to all plant cards
+    const plantCards = document.querySelectorAll('.plant-card');
+    plantCards.forEach(card => {
+        card.classList.add('scroll-animation');
+    });
 
-@media screen and (max-width: 768px) {
-    .navbar {
-        padding: 0.4rem 1rem;
-        height: 60px;
-    }
+    // Function to check if element is in viewport
+    const isInViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
 
-    .logo {
-        font-size: 1.4rem;
-    }
+    // Function to handle scroll animation
+    const handleScrollAnimation = () => {
+        const scrollAnimElements = document.querySelectorAll('.scroll-animation');
+        scrollAnimElements.forEach(element => {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    };
 
-    .nav-menu {
-        gap: 0.8rem;
-    }
+    // Initial check for elements in viewport
+    handleScrollAnimation();
 
-    .nav-menu a {
-        padding: 0.3rem 1rem;
-        font-size: 0.9rem;
-        height: 32px;
-    }
-}
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScrollAnimation);
+});
