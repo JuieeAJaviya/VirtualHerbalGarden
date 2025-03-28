@@ -36,9 +36,9 @@ app.get("/", (req, res) => {
 
 // API Endpoint to fetch herbs
 app.post("/api/search", async (req, res) => {
-    const { category, part, country, purpose } = req.body;
+    const { category, part, country, purpose, sunExposure } = req.body;
 
-    if (!category || !part || !country || !purpose) {
+    if (!category || !part || !country || !purpose || !sunExposure) {
         return res.status(400).json({ 
             success: false, 
             error: "All fields are required!" 
@@ -50,16 +50,18 @@ app.post("/api/search", async (req, res) => {
 - Origin/Region: ${country}
 - Plant Part Used: ${part}
 - Therapeutic Purpose: ${purpose}
+- Sun Exposure: ${sunExposure}
 
 For each herb, please provide:
 1. Common Name :
 2. Scientific Name : (in italics)
+4. Growing Condition : (in detail)
 3. Brief Description : (2-3 sentences about appearance and characteristics)
 4. Traditional Uses : (specifically for ${purpose})
 5. Preparation Method :
 6. Safety Considerations :
 Please format the response in a clear, organized manner with proper spacing between sections.
-Limit the response to 1 most relevant herbs. information look same as prompt.
+Limit the response to 1 most relevant herbs.information look same as prompt.
 don't use any other special characters. space of one line between two section`;
 
     try {
