@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // बेसिक वैलिडेशन
         if (!email || !password) {
-            showError('कृपया सभी फील्ड भरें');
+            showError('please fill all the fields');
             return;
         }
 
         // ईमेल वैलिडेशन
         if (!isValidEmail(email)) {
-            showError('कृपया वैध ईमेल एड्रेस डालें');
+            showError('please enter a valid email');
             return;
         }
 
@@ -60,35 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 // लॉगिन सफल
                 loginSuccess(user);
             } else {
-                showError('गलत ईमेल या पासवर्ड');
+                showError('wrong email or password');
             }
         } catch (error) {
             console.error('Error during login:', error);
-            showError('लॉगिन में त्रुटि हुई। कृपया पुनः प्रयास करें।');
+            showError('login error. please try again.');
         }
     });
 
-    // एंटर की प्रेस करने पर लॉगिन करें
+    // enter key press login
     passwordInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             loginBtn.click();
         }
     });
 
-    // एरर मैसेज दिखाने का फंक्शन
+    // show error function
     function showError(message) {
         loginError.textContent = message;
         loginError.style.display = 'block';
         
-        // 3 सेकंड बाद एरर मैसेज हटा दें
+        // 3 seconds after error message disappears
         setTimeout(() => {
             loginError.style.display = 'none';
         }, 3000);
     }
 
-    // सफल लॉगिन पर क्या करना है
+    // login success function
     function loginSuccess(user) {
-        // यूजर डेटा को लोकल स्टोरेज में सेव करें
+        // save user data to local storage
         localStorage.setItem('currentUser', JSON.stringify({
             fullName: user.fullName,
             email: user.email,
@@ -96,14 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             loginTime: new Date().toISOString()
         }));
 
-        // एनिमेटेड ट्रांजिशन के साथ डैशबोर्ड पर रीडायरेक्ट
+        // animated transition with dashboard redirect
         document.body.style.opacity = '0';
         setTimeout(() => {
             window.location.replace('dashboard.html');
         }, 500);
     }
 
-    // ईमेल वैलिडेशन फंक्शन
+    // email validation function
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
