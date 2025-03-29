@@ -147,3 +147,24 @@ select:hover, select:focus {
     margin: 10px 0;
     display: none;
 }
+
+.herb-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.formatted-output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.herb-text {
+    width: 100%;
+    margin-top: 20px;
+}
